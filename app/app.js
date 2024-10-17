@@ -12,7 +12,7 @@ import colorRouter from "../routes/colorsRouter.js";
 import reviewRouter from "../routes/reviewRouter.js";
 import orderRouter from "../routes/ordersRouter.js";
 import Order from "../model/Order.js";
-Order
+
 // database connector
 dbConnect();
 const app = express();
@@ -53,19 +53,14 @@ app.post('/webhook', express.raw({type: 'application/json'}), async(request, res
     const paymentMethod = session.payment_method_types[0];
     const totalAmount = session.amount_total;
     const currency = session.currency;
-    const order = await Order.findByIdAndUpdate(JSON.parse(orderId),
-      {
-      totalPrice: totalAmount / 10,
+    console.log({
+      orderId,
+      totalAmount,
       currency,
       paymentMethod,
       paymentStatus,
-    },
-    {
-      new : true,
+    });
 
-    }
-  );
-  console.log(order);
   } else {
     return;
   }
