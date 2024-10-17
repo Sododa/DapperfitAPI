@@ -53,7 +53,8 @@ app.post('/webhook', express.raw({type: 'application/json'}), async(request, res
     const paymentMethod = session.payment_method_types[0];
     const totalAmount = session.amount_total;
     const currency = session.currency;
-    const order = await Order.findByIdAndUpdate(orderId,{
+    const order = await Order.findByIdAndUpdate(JSON.parse(orderId),
+    {
       totalPrice: totalAmount /100,
       currency,
       paymentMethod,
