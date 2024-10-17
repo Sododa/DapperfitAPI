@@ -10,5 +10,5 @@ Styling: Tailwind CSS
 Version Control: Git 
 
 AUTHORS
-Sohie Ododa
+Sophie Ododa
 Simon Mwangi
