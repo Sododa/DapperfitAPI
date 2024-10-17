@@ -24,7 +24,7 @@ const stripe = new Stripe(process.env.STRIPE_KEY);
 // If you are testing with the CLI, find the secret by running 'stripe listen'
 // If you are using an endpoint defined with the API or dashboard, look in your webhook settings
 // at https://dashboard.stripe.com/webhooks
-const endpointSecret = 'whsec_98dbace27d42a6bf8a0b85b809206811347ea8d805dd6b7b1c662153fac71189';
+const endpointSecret = 'whsec_';
 
 app.post('/webhook', express.raw({type: 'application/json'}), async(request, response) => {
   let event = request.body;
