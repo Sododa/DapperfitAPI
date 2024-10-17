@@ -66,7 +66,7 @@ export const updateCategoryCtrl = asyncHandler(async(req, res) => {
     res.json({
      status: "success",
      messege: "Product Update Successfull",
-    product,
+     category,
     });
  });
   // deleting categories

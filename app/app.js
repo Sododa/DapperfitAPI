@@ -12,7 +12,7 @@ import colorRouter from "../routes/colorsRouter.js";
 import reviewRouter from "../routes/reviewRouter.js";
 import orderRouter from "../routes/ordersRouter.js";
 import Order from "../model/Order.js";
-Order
+
 // database connector
 dbConnect();
 const app = express();
@@ -37,7 +37,7 @@ app.post('/webhook', express.raw({type: 'application/json'}), async(request, res
       event = stripe.webhooks.constructEvent(
         request.body,
         signature,
-        endpointSecret
+        endpointSecret 
       );
       console.log("event");
     } catch (err) {
@@ -54,19 +54,17 @@ app.post('/webhook', express.raw({type: 'application/json'}), async(request, res
     const totalAmount = session.amount_total;
     const currency = session.currency;
     const order = await Order.findByIdAndUpdate(JSON.parse(orderId),
-      {
-      totalPrice: totalAmount / 10,
+    {
+      totalPrice: totalAmount /100,
       currency,
       paymentMethod,
       paymentStatus,
     },
-    {
-      new : true,
-
-    }
-  );
-  console.log(order);
-  } else {
+  {
+    new: true,
+  }
+); console.log(order);
+} else {
     return;
   }
 

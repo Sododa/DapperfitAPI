@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 // Generate random numbers for orders
-const randomTxt = Math.random().toString(36).substring(7).toLocaleUpperCase
+const randomTxt = Math.random().toString(36).substring(7).toLocaleUpperCase();
 const randomNumbers = Math.floor(1000 + Math.random()*90000)
 // blueprint schema
 const OrderSchema = new Schema({

@@ -24,7 +24,9 @@ Browse through the catalog and add products to your shopping cart.
 Proceed to checkout and complete the payment process.
 Admins can access the admin panel by visiting /admin and log in using admin credentials.
 Manage orders, update product inventory, and perform other administrative tasks from the admin panel.
-Contributors
+Version Control: Git 
+
+AUTHORS
 Sophie Ododa
 Simon Mwangi
 License
