@@ -24,7 +24,7 @@ const stripe = new Stripe(process.env.STRIPE_KEY);
 // If you are testing with the CLI, find the secret by running 'stripe listen'
 // If you are using an endpoint defined with the API or dashboard, look in your webhook settings
 // at https://dashboard.stripe.com/webhooks
-const endpointSecret = 'whsec_';
+const endpointSecret = 'whsec_98dbace27d42a6bf8a0b85b809206811347ea8d805dd6b7b1c662153fac71189';
 
 app.post('/webhook', express.raw({type: 'application/json'}), async(request, response) => {
   let event = request.body;
@@ -37,7 +37,7 @@ app.post('/webhook', express.raw({type: 'application/json'}), async(request, res
       event = stripe.webhooks.constructEvent(
         request.body,
         signature,
-        endpointSecret
+        endpointSecret 
       );
       console.log("event");
     } catch (err) {
@@ -53,15 +53,17 @@ app.post('/webhook', express.raw({type: 'application/json'}), async(request, res
     const paymentMethod = session.payment_method_types[0];
     const totalAmount = session.amount_total;
     const currency = session.currency;
-    console.log({
-      orderId,
-      totalAmount,
+    const order = await Order.findByIdAndUpdate(orderId,{
+      totalPrice: totalAmount /100,
       currency,
       paymentMethod,
       paymentStatus,
-    });
-
-  } else {
+    },
+  {
+    new: true,
+  }
+); console.log(order);
+} else {
     return;
   }
 
