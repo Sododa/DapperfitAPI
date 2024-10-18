@@ -1,4 +1,4 @@
-# ECOMMERCE-APIs
+# DapperFit-ECOMMERCE-APIs
 
 ## Description
 This API provides a set of endpoints for creating users, products with categories, color, and brand and  also making orders, built using Node.js and Express. It integrates with MongoDB for data storage, Stripe for payment processing, and uses JWT for Authentication, Render for deploying, postman for testing and documentation
