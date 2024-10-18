@@ -53,6 +53,8 @@ Example of Token Usage
 Authorization: Bearer <your_jwt_token>
 
 We learnt  from IT Education Network since it was our first API complex creation
+Deployed link https://dapperfit-api.onrender.com kindly read the API documentation above in Order for you to understand.
+Collaboration is  highly encouraged feel free to form our Repository
 
 License
 This API is licensed under the MIT License.
