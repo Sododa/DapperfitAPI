@@ -21,7 +21,7 @@ This API provides a set of endpoints for creating users, products with categorie
 - **Authentication**: JWT (JSON Web Token)
 - **Deployment**: Render
 - **Version Control**: GitHub
-- **Testing and Documentation**: Postman
+- **Testing and Documentation**: Postman, and JSON formatter
 - **Development Environment**: Visual Studio Code,
 
 ## Architecture
