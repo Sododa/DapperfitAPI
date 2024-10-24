@@ -51,7 +51,7 @@ If necessary, map JSON and add actions.
 Save the command and use the "Copy URL" button to grab the trigger for the webhook.
 WARNED: ANYONE THAT GETS ACCESS TO THIS URL COULD TRIGGER THE ACTION! Only share this URL with trusted sources. The URL is in the form of: https://api.mixitupapp.com/api/webhook/{SomeId}?secret=
 
-Go to the external website, such as KoFi and enter the necessary information. KoFi Config
+Go to the external website, such as Beeceptor and enter the necessary information. Beeceptor Config
 At this point, you should be able to test the webhook and the event should trigger!
 
 
